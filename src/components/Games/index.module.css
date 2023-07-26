@@ -1,0 +1,56 @@
+.section{
+  background-color: rgb(20, 18, 18);
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+
+  padding: 10px;
+}
+
+.cardGame{
+  background-color: #e2e2e4;
+  width: 30%;
+  height: 160px;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.cardGame img{
+  width: 88px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.cardGame p{
+  font-weight: 600;
+  font-size: 12px;
+}
+
+article{
+  width: 90%;
+  position: absolute;
+  bottom: 2px;
+  display: flex;
+  gap: 10px;
+}
+
+button{
+  width: 46%;
+  cursor: pointer;
+  border: none;
+  background: #4fa9e1;
+  color: #fff;
+  padding: 2px;
+  border-radius: 4px;
+}

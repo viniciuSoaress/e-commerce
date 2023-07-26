@@ -40,7 +40,13 @@ export function Inplementacao() {
 
   function handleIsCart(it: Products) {
     setIsCart(ic => !ic)
-    setP({ id: it.id, name: it.name, preco: it.preco, descricao: it.descricao, quant: it.quant })
+    setP({
+      id: it.id,
+      name: it.name,
+      preco: it.preco,
+      descricao: it.descricao,
+      quant: it.quant
+    })
   }
 
   function handleAddClick(prod: Products, value: number) {
@@ -71,19 +77,10 @@ export function Inplementacao() {
           />
         ))}
 
-        <hr />
-        <hr />
-        <hr />
-
-        {/* {products.map(p => (
-          <p key={p.id}>
-            {p.name}{' '}
-            {p.preco}{' '}
-            {p.descricao}{' '}
-          </p>
-        ))} */}
       </main>
+
       {products.map(i => { valor += i.preco })}
+      
       <Sacola p={products} value={valor} />
 
       {isCart && (<Prod produtos={p} onClick={() => setIsCart(false)} />)}
@@ -97,7 +94,7 @@ type ProductsProps = {
     name: string,
     preco: number,
     descricao: string,
-    id: number, 
+    id: number,
     quant: number,
   }
   onClick: (prod: Products, value: number) => void,

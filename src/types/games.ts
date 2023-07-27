@@ -1,20 +1,10 @@
 import { MouseEventHandler } from "react"
+import { Game } from "./data"
 
 
 export type GamesProps = {
-  games: {
-    id: number,
-    name: string,
-    avatar: string,
-    descricao: string,
-    valor: number
-  }[],
+  games: Game[],
   isVisible: MouseEventHandler<HTMLButtonElement>,
-  onGame:(item: {
-    id: number,
-    name: string,
-    avatar: string,
-    descricao: string,
-    valor: number
-  }) => void,
+  onGame:(item: Game) => void,
+  onAdd: (item: Game) => void,
 }

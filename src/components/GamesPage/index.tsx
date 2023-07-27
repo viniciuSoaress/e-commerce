@@ -1,16 +1,32 @@
 import { GamePageProps } from "../../types/gamePage";
+import s from './index.module.css'
 
 
-
-export function GamePage({ game,onClose }: GamePageProps) {
+export function GamePage({ game, onClose }: GamePageProps) {
 
   return (
-    <div style={{ width: '100vw', height: '100vh', backgroundColor: '#fff' }}>
+    <div className={s.conteiner}>
+      <section className={s.section}>
 
-      <button onClick={onClose} style={{width: 'auto'}}>
-        close
-      </button>
-      <img src={game.avatar} alt="" width={100} />
+        <header>
+          <h2>{game.name}</h2>
+
+          <img
+            src={game.avatar}
+            alt={game.name}
+            className={s.image}
+          />
+
+          <p>{game.descricao}</p>
+          <strong>Preço: {game.valor}$</strong>
+        </header>
+
+        <button className={s.buttonClose} onClick={onClose}>
+          fechar
+        </button>
+
+
+      </section>
     </div>
   )
 }

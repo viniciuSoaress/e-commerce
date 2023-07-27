@@ -1,14 +1,18 @@
 import { useState } from "react"
 
-import { Games, GamePage } from "./components"
+import { Games, GamePage, Header,Sacola } from "./components"
 import { datas } from "./data"
 import { Game } from "./types/data";
 
 export function App() {
 
-  const [isGame, setIsGame] = useState(false);
+  const [isGame, setIsGame] = useState('typing');
 
   const [game, setGame] = useState<Game>({} as Game)
+
+  const [games, setGames] = useState<Game[]>([])
+
+  
 
   function handleGame(item: Game) {
     setGame({
@@ -20,17 +24,37 @@ export function App() {
     })
   }
 
+  function handleAddGameClick(item: Game){
+    setGames([
+      ...games,
+      {
+        id: item.id,
+        name: item.name,
+        avatar: item.avatar,
+        descricao: item.descricao,
+        valor: item.valor
+      }
+    ])
+  }
+
   return (
     <>
+
+    <Header games={games} onVisible={() => setIsGame('sacola')}/>
       <Games
         games={datas}
-        isVisible={() => setIsGame(true)}
+        isVisible={() => setIsGame('game')}
         onGame={handleGame}
+        onAdd={handleAddGameClick}
       />
 
-      {isGame && (<GamePage game={game}
-        onClose={() => setIsGame(false)}
+      {isGame === 'game' && (<GamePage game={game}
+        onClose={() => setIsGame('typing')}
       />)}
+
+      {isGame === 'sacola' && (
+        <Sacola />
+      )}
     </>
   )
 }

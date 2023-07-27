@@ -2,7 +2,7 @@ import { GamesProps } from "../../types";
 import s from './index.module.css'
 
 
-export function Games({ games, isVisible,onGame }: GamesProps) {
+export function Games({ games, isVisible, onGame, onAdd }: GamesProps) {
 
   return (
     <section className={s.section}>
@@ -13,14 +13,19 @@ export function Games({ games, isVisible,onGame }: GamesProps) {
 
           <p>preço: {game.valor}$</p>
 
-          <article>
-            <button onClick={(e) => {
+          <article className={s.article}>
+            <button className={s.button} onClick={(e) => {
               isVisible(e)
               onGame(game)
             }}>
               ver
             </button>
-            <button>comprar</button>
+            <button
+              className={s.button}
+              onClick={() => onAdd(game)}
+            >
+              comprar
+            </button>
           </article>
         </div>
       ))}

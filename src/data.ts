@@ -1,4 +1,14 @@
+import { Game } from "./types/data";
 
+
+export function getGames( games: Game[], state: string){
+ 
+  state = state.toLocaleLowerCase();
+
+  return games.filter(game => 
+    game.descricao.split(' ').some(item => item.toLocaleLowerCase().startsWith(state))
+  )
+}
 
 
 export const datas = [
@@ -15,68 +25,5 @@ export const datas = [
     avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
     descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
     valor: 89.45, 
-  },
-  {
-    id: 1, 
-    name: 'Dragon Ball Fighter Z',
-    avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
-    descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
-    valor: 89.45, 
-  },
-  {
-    id: 1, 
-    name: 'Dragon Ball Fighter Z',
-    avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
-    descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
-    valor: 89.45, 
-  },
-  {
-    id: 1, 
-    name: 'Dragon Ball Fighter Z',
-    avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
-    descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
-    valor: 89.45, 
-  },
-  {
-    id: 1, 
-    name: 'Dragon Ball Fighter Z',
-    avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
-    descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
-    valor: 89.45, 
-  },
-  {
-    id: 1, 
-    name: 'Dragon Ball Fighter Z',
-    avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
-    descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
-    valor: 89.45, 
-  },
-  {
-    id: 1, 
-    name: 'Dragon Ball Fighter Z',
-    avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
-    descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
-    valor: 89.45, 
-  },
-  {
-    id: 1, 
-    name: 'Dragon Ball Fighter Z',
-    avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
-    descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
-    valor: 89.45, 
-  },
-  {
-    id: 1, 
-    name: 'Dragon Ball Fighter Z',
-    avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
-    descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
-    valor: 89.45, 
-  },
-  {
-    id: 1, 
-    name: 'Dragon Ball Fighter Z',
-    avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
-    descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
-    valor: 89.45, 
-  },
+  }
 ]

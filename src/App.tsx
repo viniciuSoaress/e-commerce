@@ -1,18 +1,25 @@
-import { useState } from "react"
+import { ChangeEvent, useState } from "react"
 
-import { Games, GamePage, Header,Sacola } from "./components"
-import { datas } from "./data"
-import { Game } from "./types/data";
+import { Games, GamePage, Header, Sacola } from "./components"
+import { datas, getGames } from "./data"
+import { Game  } from "./types/data";
 
 export function App() {
 
+  const [name, setName] = useState('')
+
+  const result = getGames( datas, name);
+  console.log(result)
+
   const [isGame, setIsGame] = useState('typing');
 
-  const [game, setGame] = useState<Game>({} as Game)
+  const [game, setGame] = useState<Game>({} as Game);
 
-  const [games, setGames] = useState<Game[]>([])
+  const [games, setGames] = useState<Game[]>([]);
 
-  
+  let valor = 0;
+
+  games.map(i => valor += i.valor)
 
   function handleGame(item: Game) {
     setGame({
@@ -24,7 +31,7 @@ export function App() {
     })
   }
 
-  function handleAddGameClick(item: Game){
+  function handleAddGameClick(item: Game) {
     setGames([
       ...games,
       {
@@ -37,24 +44,51 @@ export function App() {
     ])
   }
 
+
+  function handleDeleteGameClick(id: number) {
+    setGames(games.filter(game => game.id !== id))
+  }
+
+  function handleNameChange(e: ChangeEvent<HTMLInputElement>){
+    setName(e.target.value)
+  }
+
   return (
     <>
 
-    <Header games={games} onVisible={() => setIsGame('sacola')}/>
-      <Games
-        games={datas}
+      <Header
+        games={games}
+        onVisible={() => setIsGame('sacola')}
+        onName={handleNameChange}
+      />
+
+      {/* <ul>
+        {result.map(e => <p>{e.name}</p>)}
+      </ul> */}
+
+      {isGame !== 'game' && (<Games
+        games={result}
         isVisible={() => setIsGame('game')}
         onGame={handleGame}
         onAdd={handleAddGameClick}
-      />
+      />)}
 
       {isGame === 'game' && (<GamePage game={game}
         onClose={() => setIsGame('typing')}
       />)}
 
+
+
       {isGame === 'sacola' && (
-        <Sacola />
+        <Sacola
+          games={games}
+          onClose={() => setIsGame('typing')}
+          valor={valor}
+          onDelete={handleDeleteGameClick}
+        />
       )}
+
+     
     </>
   )
 }

@@ -25,5 +25,5 @@ export const datas = [
     avatar: 'https://cdn.shopify.com/s/files/1/0875/3268/products/Dragon-Ball-FighterZ-PC-Game-Steam-CD-Key_grande.jpg?v=1533782264',
     descricao: 'Dragon Ball Fighter Z, jogo de pc da empreja bandai',
     valor: 89.45, 
-  }
+  },
 ]

@@ -9,7 +9,7 @@ export function App() {
   const [name, setName] = useState('')
 
   const result = getGames( datas, name);
-  console.log(result)
+  
 
   const [isGame, setIsGame] = useState('typing');
 
@@ -54,17 +54,13 @@ export function App() {
   }
 
   return (
-    <>
+    <main style={{backgroundColor: 'rgb(182, 237, 236)'}}>
 
       <Header
         games={games}
         onVisible={() => setIsGame('sacola')}
         onName={handleNameChange}
       />
-
-      {/* <ul>
-        {result.map(e => <p>{e.name}</p>)}
-      </ul> */}
 
       {isGame !== 'game' && (<Games
         games={result}
@@ -88,8 +84,11 @@ export function App() {
         />
       )}
 
+        <footer style={{width: '100%', height: 18, backgroundColor: 'rgb(182, 237, 236)'}}>
+            s
+        </footer>
      
-    </>
+    </main>
   )
 }
 

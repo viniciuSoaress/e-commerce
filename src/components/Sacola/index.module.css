@@ -1,12 +1,13 @@
 .conteiner {
   width: 50vw;
-  min-height: 100vh;
-  background: #e2e2e4;
+  min-height: 100%;
+  background: #0000004e;
 
   position: absolute;
-  top: 80px;
+  top: 0;
   right: 0;
- 
+  bottom: 0;
+  
   display: flex;
   flex-direction: column;
 
@@ -18,11 +19,6 @@
   align-items: center;
 
   padding: 6px 10px;
-}
-
-.button {
-  border-radius: 8px;
-  padding: 4px ;
 }
 
 .card{

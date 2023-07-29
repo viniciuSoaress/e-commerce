@@ -1,4 +1,5 @@
-import { GamePageProps } from "../../types/gamePage";
+import { GamePageProps } from "../../types";
+import { Button } from "../Button";
 import s from './index.module.css'
 
 
@@ -18,13 +19,18 @@ export function GamePage({ game, onClose }: GamePageProps) {
           />
 
           <p>{game.descricao}</p>
-          <strong>Preço: {game.valor}$</strong>
+
         </header>
 
-        <button className={s.buttonClose} onClick={onClose}>
-          fechar
-        </button>
+        <div className={s.buttonC}>
 
+          <strong>Preço: {game.valor}$</strong>
+
+          <Button onClick={onClose}>
+            Fechar
+          </Button>
+
+        </div>
 
       </section>
     </div>

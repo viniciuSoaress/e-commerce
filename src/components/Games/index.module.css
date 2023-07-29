@@ -1,15 +1,17 @@
 .section{
-  background-color: rgb(20, 18, 18);
-  width: 96%;
-  min-height: 80vh;
+  background-color: rgb(80, 82, 124);
+  box-shadow: 1px 1px 4px #150909;
+  width: 92%;
+  max-width: 900px;
+  min-height: 75vh;
 
   margin: auto;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 6px 0;
 
   display: flex;
   flex-flow: row wrap;
-  gap: 4px;
+  gap: 6px;
   justify-content: center;
   
 
@@ -17,7 +19,7 @@
 }
 
 .cardGame{
-  background-color: #e2e2e4;
+  background-color: #e3e2e1;
   width: 30%;
   height: 160px;
 
@@ -48,15 +50,11 @@
   position: absolute;
   bottom: 2px;
   display: flex;
+  justify-content: space-between;
   gap: 10px;
 }
 
-.button{
-  width: 46%;
-  cursor: pointer;
-  border: none;
-  background: #4fa9e1;
-  color: #fff;
-  padding: 2px;
-  border-radius: 4px;
+.valor{
+  margin-top: 6px;
+  
 }

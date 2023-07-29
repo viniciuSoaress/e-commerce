@@ -1,4 +1,5 @@
 import { SacolaProps } from '../../types/sacola'
+import { Button } from '../Button'
 import s from './index.module.css'
 
 
@@ -8,25 +9,34 @@ export function Sacola({ games, onClose, valor, onDelete }: SacolaProps) {
     <div className={s.conteiner}>
 
       <div className={s.header}>
+
         <h2>sacola</h2>
-        <button className={s.button} onClick={onClose}>
-          X
-        </button>
+
+        <Button onClick={onClose}>
+          Fechar
+        </Button>
+
       </div>
 
       <ul>
         {games.map(game => (
-          <li key={game.id} className={s.card}>
+
+          <li key={game.id } className={s.card}>
+
             <img src={game.avatar} alt={game.name} />
+
             <div>
               <small>{game.name}</small>
               <br />
               <small>{game.valor}$</small>
             </div>
-            <button onClick={() => onDelete(game.id)}>
+
+            <Button onClick={() => onDelete(game.id)}>
               x
-            </button>
+            </Button>
+            
           </li>
+
         ))}
       </ul>
 

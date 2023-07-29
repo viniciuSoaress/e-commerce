@@ -1,31 +1,38 @@
+import { useState } from "react";
+
 import { GamesProps } from "../../types";
+import { Button } from "../Button";
 import s from './index.module.css'
 
 
 export function Games({ games, isVisible, onGame, onAdd }: GamesProps) {
+  
+  const [is, setIs] = useState(false)
 
   return (
     <section className={s.section}>
       {games.map(game => (
         <div key={game.id} className={s.cardGame}>
-          <img src={game.avatar} alt={game.name} width={80} />
-          <p>name: {game.name}</p>
+          <img src={game.avatar} alt={game.name}  />
+          <p>{game.name}</p>
 
-          <p>preço: {game.valor}$</p>
+          <p className={s.valor}>Valor: {game.valor}$</p>
 
           <article className={s.article}>
-            <button className={s.button} onClick={(e) => {
+
+           {!is && <Button onClick={(e) => {
               isVisible(e)
               onGame(game)
             }}>
-              ver
-            </button>
-            <button
-              className={s.button}
-              onClick={() => onAdd(game)}
-            >
-              comprar
-            </button>
+              Produto
+            </Button>}
+
+            <Button onClick={() => {
+              onAdd(game)
+                setIs(true)
+              }}>
+                Comprar
+            </Button>
           </article>
         </div>
       ))}

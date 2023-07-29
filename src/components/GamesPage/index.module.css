@@ -1,20 +1,21 @@
 .conteiner{
-  background-color: rgba(0, 0, 0, 0.5);
-
+  background-color: rgb(182, 237, 236);
+  
   width: 100%;
   min-height: 100vh;
   position: absolute;
   top: 0;
   bottom: 0;
   z-index: 1;
-
+  
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .section{
-  background: #fff;
+  background: #e2e2e4;
+  box-shadow: 1px 1px 4px black;
   border-radius: 8px;
 
   width: 76vw;
@@ -25,15 +26,12 @@
   padding: 10px;
 }
 
-.buttonClose{
+.buttonC{
   position: absolute;
-  bottom: 6px;
-  right: 10px;
-  padding: 2px;
-
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
+  bottom: 10px;
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
 
 }
 

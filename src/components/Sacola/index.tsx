@@ -5,6 +5,9 @@ import s from './index.module.css'
 
 export function Sacola({ games, onClose, valor, onDelete }: SacolaProps) {
 
+  const arry = games.filter((este, i) => {
+    return games.indexOf(este) === i
+  })
   return (
     <div className={s.conteiner}>
 
@@ -19,7 +22,7 @@ export function Sacola({ games, onClose, valor, onDelete }: SacolaProps) {
       </div>
 
       <ul>
-        {games.map(game => (
+        {arry.map(game => (
 
           <li key={game.id } className={s.card}>
 
@@ -40,7 +43,7 @@ export function Sacola({ games, onClose, valor, onDelete }: SacolaProps) {
         ))}
       </ul>
 
-      <h2>valor total: {valor.toFixed(2)}$</h2>
+      <h2 className={s.h2}>valor total: {valor.toFixed(2)}$</h2>
     </div>
   )
 }

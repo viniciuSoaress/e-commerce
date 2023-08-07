@@ -62,7 +62,7 @@ export function App() {
         onName={handleNameChange}
       />
 
-      {isGame !== 'game' && (<Games
+      {isGame !== 'games' && (<Games
         games={result}
         isVisible={() => setIsGame('game')}
         onGame={handleGame}
@@ -84,7 +84,9 @@ export function App() {
         />
       )}
 
-        <footer style={{width: '100%', height: 18, backgroundColor: 'rgb(182, 237, 236)'}}>
+        <footer 
+        style={{width: '100%', height: 18, backgroundColor: 'rgb(182, 237, 236)'}}
+        >
             s
         </footer>
      

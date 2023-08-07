@@ -1,5 +1,6 @@
 import { HeaderProps } from '../../types/header'
 import s from './index.module.css'
+import { ShoppingCart } from 'phosphor-react'
 
 export function Header({ games, onVisible, onName }: HeaderProps) {
 
@@ -8,21 +9,23 @@ export function Header({ games, onVisible, onName }: HeaderProps) {
 
       <div className={s.text}>
 
-      <h2>loja de games</h2>
+        <h2>Vin Games</h2>
 
-      <input
-        type="text"
-        onChange={onName}
-        placeholder='nome do jogo'
-        className={s.input}
-      />
+        <input
+          type="text"
+          onChange={onName}
+          placeholder='nome do jogo'
+          className={s.input}
+        />
       </div>
 
       <div className={s.cart} onClick={onVisible}>
 
         <p className={s.top}>{games.length}</p>
 
-        <p>cart</p>
+        <p>
+          <ShoppingCart size={32}/>
+        </p>
 
       </div>
     </header>

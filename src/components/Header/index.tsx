@@ -7,9 +7,9 @@ export function Header({ games, onVisible, onName }: HeaderProps) {
   return (
     <header className={s.header}>
 
-      <div className={s.text}>
+      <div className={s.headerContent}>
 
-        <h2>Vin Games</h2>
+        <h1>Games</h1>
 
         <input
           type="text"
@@ -17,17 +17,17 @@ export function Header({ games, onVisible, onName }: HeaderProps) {
           placeholder='nome do jogo'
           className={s.input}
         />
+
       </div>
 
       <div className={s.cart} onClick={onVisible}>
 
-        <p className={s.top}>{games.length}</p>
+        <span className={s.cartValue}>{games.length}</span>
 
-        <p>
-          <ShoppingCart size={32}/>
-        </p>
+        <p><ShoppingCart size={28} /></p>
 
       </div>
+      
     </header>
   )
 }

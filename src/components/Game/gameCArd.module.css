@@ -1,0 +1,21 @@
+.card{
+  background: #151516;
+
+  width: 120px;
+  height: 160px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px;
+  border-radius: 8px;
+
+  font-size: 12px;
+}
+
+.actions{
+  display: flex;
+  gap: 6px;
+}

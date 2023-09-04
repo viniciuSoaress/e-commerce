@@ -64,3 +64,8 @@ function ButtonConteiner({ onGame, onAdd, game, isVisible }: ButtoCProps) {
   )
 
 }
+
+
+function Card(){
+  
+}

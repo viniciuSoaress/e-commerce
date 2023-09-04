@@ -1,15 +1,15 @@
 import { ChangeEvent, useState } from "react"
 
-import { Games, GamePage, Header, Sacola } from "./components"
+import { Games, GamePage, Header, Sacola, GameC } from "./components"
 import { datas, getGames } from "./data"
-import { Game  } from "./types/data";
+import { Game } from "./types/data";
 
 export function App() {
 
   const [name, setName] = useState('')
 
-  const result = getGames( datas, name);
-  
+  const result = getGames(datas, name);
+
 
   const [isGame, setIsGame] = useState('typing');
 
@@ -49,29 +49,46 @@ export function App() {
     setGames(games.filter(game => game.id !== id))
   }
 
-  function handleNameChange(e: ChangeEvent<HTMLInputElement>){
+  function handleNameChange(e: ChangeEvent<HTMLInputElement>) {
     setName(e.target.value)
   }
 
   return (
-    <main style={{backgroundColor: 'rgb(182, 237, 236)'}}>
+    <main style={{ backgroundColor: '#151516', minHeight: '100vh' }}>
 
-      <Header
+      {/* <Header
         games={games}
         onVisible={() => setIsGame('sacola')}
         onName={handleNameChange}
-      />
+      /> */}
 
-      {isGame !== 'games' && (<Games
+      {/* {isGame !== 'games' && (<Games
         games={result}
         isVisible={() => setIsGame('game')}
         onGame={handleGame}
         onAdd={handleAddGameClick}
-      />)}
+      />)} */}
 
-      {isGame === 'game' && (<GamePage game={game}
+      <GameC.Content>
+        {result.map(ga => (
+          <GameC.Card
+            value={ga.valor} key={ga.id}
+            avatar={ga.avatar}
+            name={ga.name}
+          >
+            <GameC.Action game={ga} onClick={handleAddGameClick}>
+              comprar
+            </GameC.Action>
+            <GameC.Action game={ga} onClick={handleGame}>
+              Produtor
+            </GameC.Action>
+          </GameC.Card>
+        ))}
+      </GameC.Content>
+
+      {/* {isGame === 'game' && (<GamePage game={game}
         onClose={() => setIsGame('typing')}
-      />)}
+      />)} */}
 
 
 
@@ -84,12 +101,12 @@ export function App() {
         />
       )}
 
-        <footer 
+        {/* <footer 
         style={{width: '100%', height: 18, backgroundColor: 'rgb(182, 237, 236)'}}
         >
             s
-        </footer>
-     
+        </footer> */}
+
     </main>
   )
 }

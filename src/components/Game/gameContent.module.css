@@ -1,0 +1,25 @@
+.content{
+  width: 100vw;
+  /* padding: 12px; */
+  min-height: 75vh;
+  background-color: #151516;
+  color: #e2e2e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container{
+  background-color: #2a2a2a;
+  width: 98%;
+  border-radius: 12px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  padding: 20px;
+  /* margin: auto; */
+}

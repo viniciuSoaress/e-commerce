@@ -55,14 +55,14 @@ export const datas = [
     valor: 276.80
   },
   {
-    id: 4,
+    id: 6,
     name: 'the legend of Zelda',
     avatar: 'https://th.bing.com/th/id/R.342ff9a48fa3b2cb06063e527c210357?rik=YkjojcNbjoEWBQ&pid=ImgRaw&r=0',
     descricao: 'The legend of zelda, jogo de nintendo ds, de aventura e esploração',
     valor: 276.80
   },
   {
-    id: 4,
+    id: 7,
     name: 'Call Of Duty Black Ops III',
     avatar: 'https://th.bing.com/th/id/OIP.4mZU1PU7MR3-kpSBL6EzAQHaHa?pid=ImgDet&w=1080&h=1080&rs=1',
     descricao: 'Call Of Duty Black Ops III, jogo de ação e sobrevivencias',

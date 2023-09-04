@@ -35,7 +35,7 @@
 }
 
 .cardGame img{
-  width: 88px;
+  width: 68px;
   object-fit: contain;
   border-radius: 4px;
 }
@@ -50,8 +50,9 @@
   position: absolute;
   bottom: 2px;
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  font-size:12px;
+  /* justify-content: space-between; */
+  /* gap: 10px; */
 }
 
 .valor{

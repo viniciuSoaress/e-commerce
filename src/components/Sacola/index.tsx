@@ -5,13 +5,19 @@ import { formt } from "../../utils/format";
 
 
 
-export function Sacola({ games, onClose, onDelete }: SacolaProps) {
 
-  const arry = games.filter((este, i) => {
+
+export function Sacola({ games, onClose, onDelete }: SacolaProps) {
+  
+  let arry = games.filter((este, i) => {
     return games.indexOf(este) === i
   })
 
-  const value = games.reduce((acc, int) => acc + int.valor, 0)
+  arry = arry.filter((value, index, self) => self.findIndex(item => item.id === value.id) === index)
+  
+  const value = arry.reduce((acc, int) => acc + int.valor, 0)
+
+  
 
 
   return (
@@ -19,13 +25,16 @@ export function Sacola({ games, onClose, onDelete }: SacolaProps) {
 
       <div className={s.header}>
 
-        <h2>sacola</h2>
+        <h2 className={s.h2}>sacola</h2>
 
         <Button onClick={onClose}>
           Fechar
         </Button>
 
       </div>
+
+      
+
 
       <ul className={s.ul}>
         {arry.map(game => (

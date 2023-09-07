@@ -2,7 +2,7 @@ import { HeaderProps } from '../../types/header'
 import s from './index.module.css'
 import { ShoppingCart } from 'phosphor-react'
 
-export function Header({ games, onVisible, onName }: HeaderProps) {
+export function Header({ onVisible, onName }: HeaderProps) {
 
   return (
     <header className={s.header}>
@@ -22,7 +22,6 @@ export function Header({ games, onVisible, onName }: HeaderProps) {
 
       <div className={s.cart} onClick={onVisible}>
 
-        <span className={s.cartValue}>{games.length}</span>
 
         <p><ShoppingCart size={28} /></p>
 

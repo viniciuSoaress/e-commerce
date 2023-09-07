@@ -9,7 +9,7 @@ export function Button({children, onClick}: ButtonProps){
     <>
       <button 
       className={s.button}
-        onClick={onClick}
+        onClick={() =>onClick}
       >
         {children}
       </button>

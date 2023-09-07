@@ -27,9 +27,9 @@ export function Sacola({ games, onClose, onDelete }: SacolaProps) {
 
         <h2 className={s.h2}>sacola</h2>
 
-        <Button onClick={onClose}>
+        <button onClick={onClose}>
           Fechar
-        </Button>
+        </button>
 
       </div>
 
@@ -49,9 +49,9 @@ export function Sacola({ games, onClose, onDelete }: SacolaProps) {
               <small>{formt(game.valor)}</small>
             </div>
 
-            <Button onClick={() => onDelete(game.id)}>
+            <button onClick={() => onDelete(game.id)}>
               x
-            </Button>
+            </button>
 
           </li>
 

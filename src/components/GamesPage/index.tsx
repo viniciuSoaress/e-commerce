@@ -1,9 +1,12 @@
 import { GamePageProps } from "../../types";
 import { Button } from "../Button";
 import s from './index.module.css'
+import { formt } from "../../utils/format";
 
 
 export function GamePage({ game, onClose }: GamePageProps) {
+
+  
 
   return (
     <div className={s.conteiner}>
@@ -24,8 +27,11 @@ export function GamePage({ game, onClose }: GamePageProps) {
 
         <div className={s.buttonC}>
 
-          <strong>Preço: {game.valor}$</strong>
+          <strong>Valor: {formt(game.valor)}</strong>
 
+          {/* <Button onClick={() => alert('conpra')}>
+            conprar
+          </Button> */}
           <Button onClick={onClose}>
             Fechar
           </Button>

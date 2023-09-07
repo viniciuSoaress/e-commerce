@@ -1,6 +1,9 @@
 .conteiner{
-  background-color: rgb(182, 237, 236);
+  background-color: #2a2a2a;
+  color: #e2e2e4;
   
+  
+
   width: 100%;
   min-height: 100vh;
   position: absolute;
@@ -14,29 +17,32 @@
 }
 
 .section{
-  background: #e2e2e4;
+  background: #151516;
   box-shadow: 1px 1px 4px black;
-  border-radius: 8px;
+  border-radius: .8rem;
 
-  width: 76vw;
+  
+
+  padding: 20px 30px;
+
+  width: 78vw;
   height: 76vh;
   
   position: relative;
 
-  padding: 10px;
 }
 
 .buttonC{
   position: absolute;
-  bottom: 10px;
-  width: 94%;
+  bottom: 1.2rem;
+  width: 88%;
   display: flex;
   justify-content: space-between;
 
 }
 
 .image{
-  width: 170px;
+  width: 180px;
   border-radius: 8px;
-  margin: 4px ;
+  margin: 1rem auto;
 }

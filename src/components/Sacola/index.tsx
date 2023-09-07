@@ -1,13 +1,19 @@
 import { SacolaProps } from '../../types/sacola'
 import { Button } from '../Button'
 import s from './index.module.css'
+import { formt } from "../../utils/format";
 
 
-export function Sacola({ games, onClose, valor, onDelete }: SacolaProps) {
+
+export function Sacola({ games, onClose, onDelete }: SacolaProps) {
 
   const arry = games.filter((este, i) => {
     return games.indexOf(este) === i
   })
+
+  const value = games.reduce((acc, int) => acc + int.valor, 0)
+
+
   return (
     <div className={s.conteiner}>
 
@@ -21,29 +27,29 @@ export function Sacola({ games, onClose, valor, onDelete }: SacolaProps) {
 
       </div>
 
-      <ul>
+      <ul className={s.ul}>
         {arry.map(game => (
 
-          <li key={game.id } className={s.card}>
+          <li key={game.id} className={s.card}>
 
             <img src={game.avatar} alt={game.name} />
 
             <div>
               <small>{game.name}</small>
               <br />
-              <small>{game.valor}$</small>
+              <small>{formt(game.valor)}</small>
             </div>
 
             <Button onClick={() => onDelete(game.id)}>
               x
             </Button>
-            
+
           </li>
 
         ))}
       </ul>
 
-      <h2 className={s.h2}>valor total: {valor.toFixed(2)}$</h2>
+      <h2 className={s.h2}>valor total: {formt(value)}</h2>
     </div>
   )
 }

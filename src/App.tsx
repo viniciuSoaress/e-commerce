@@ -1,8 +1,9 @@
 import { ChangeEvent, useState } from "react"
 
-import { Games, GamePage, Header, Sacola, GameC } from "./components"
+import {  GamePage, Header, Sacola, GameC } from "./components"
 import { datas, getGames } from "./data"
 import { Game } from "./types/data";
+
 
 export function App() {
 
@@ -56,11 +57,11 @@ export function App() {
   return (
     <main style={{ backgroundColor: '#151516', minHeight: '100vh' }}>
 
-      {/* <Header
+      <Header
         games={games}
         onVisible={() => setIsGame('sacola')}
         onName={handleNameChange}
-      /> */}
+      />
 
       {/* {isGame !== 'games' && (<Games
         games={result}
@@ -69,7 +70,7 @@ export function App() {
         onAdd={handleAddGameClick}
       />)} */}
 
-      <GameC.Content>
+      {isGame === 'typing' && (<GameC.Content>
         {result.map(ga => (
           <GameC.Card
             value={ga.valor} key={ga.id}
@@ -79,16 +80,19 @@ export function App() {
             <GameC.Action game={ga} onClick={handleAddGameClick}>
               comprar
             </GameC.Action>
-            <GameC.Action game={ga} onClick={handleGame}>
+            <GameC.Action game={ga} onClick={() =>{
+              handleGame(ga)
+              setIsGame('game')
+              }}>
               Produtor
             </GameC.Action>
           </GameC.Card>
         ))}
-      </GameC.Content>
+      </GameC.Content>)}
 
-      {/* {isGame === 'game' && (<GamePage game={game}
+      {isGame === 'game' && (<GamePage game={game}
         onClose={() => setIsGame('typing')}
-      />)} */}
+      />)}
 
 
 
@@ -96,7 +100,6 @@ export function App() {
         <Sacola
           games={games}
           onClose={() => setIsGame('typing')}
-          valor={valor}
           onDelete={handleDeleteGameClick}
         />
       )}

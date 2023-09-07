@@ -1,4 +1,6 @@
 import s from './gameCArd.module.css'
+import { formt } from "../../utils/format";
+
 
 type GameCard = {
   value: number,
@@ -16,12 +18,7 @@ export function GameCard({
 ) {
 
 
-  function formt(num: number){
-   return new Intl.NumberFormat('pt-br', {
-    style: 'currency',
-    currency: 'BRL',
-   }).format(num)
-  }
+ 
 
   return (
     <section className={s.card}>

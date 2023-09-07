@@ -1,5 +1,4 @@
 import { SacolaProps } from '../../types/sacola'
-import { Button } from '../Button'
 import s from './index.module.css'
 import { formt } from "../../utils/format";
 
